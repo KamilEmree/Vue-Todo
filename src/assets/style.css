@@ -1,0 +1,437 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+::selection {
+    background-color: #e0e0e0;
+    color: #131313;
+}
+
+/* Theme */
+
+:root {
+    --background-color-2: #fff;
+    --background-color-3: #485696;
+    --background-color-4: #313131;
+    --background-color-5: #ff686b;
+    --background-color-6: #e5e5e5;
+    --background-hover: #223247;
+    --icon-color : #fff;
+    --text-color: #fff;  
+    --list-color-Red :#ef476f;
+    --list-color-Yellow :#ffd166;
+    --list-color-Green :#06d6a0;
+} 
+
+[data-theme='darkMode'] {
+    --background-color-2: #f2e9e4;
+    --background-color-3: #22223b;
+    --background-color-4: #313131;
+    --background-color-5: #fff;
+    --background-color-6: #dadada;
+    --background-hover: #121220;
+    --icon-color : #131313;
+    --text-color: #fff;  
+    --list-color-Red :#ef476f;
+    --list-color-Yellow :#ffd166;
+    --list-color-Green :#06d6a0;  
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    background-color: #ddd;
+}
+
+#Head-Section {
+    padding: 1rem 2rem 5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color-3);
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.Title-Icon {
+    padding: .6rem;
+    font-size: 20px;
+    transition: all 300ms;
+}
+
+.Title-Icon:hover {
+    cursor: pointer;
+    background-color: var(--background-color-5);
+    color: var(--icon-color);
+    border-radius: 50%;
+}
+
+#Theme-Icon {
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+}
+
+#Values-Section {
+    z-index: 1;
+    margin: -4rem 7rem 0 7rem;
+    padding: 1.4rem 0;
+    display: grid;
+    justify-content: space-around;
+    text-align: center;
+    grid-template-columns: auto auto auto auto;
+    background-color: var(--background-color-2);
+    border-radius: .1rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    transition: all 200ms;
+}
+
+#Values-Section-2 {
+    z-index: 1;
+    margin: -4rem 7rem 0 7rem;
+    padding: 2rem 0;
+    text-align: center;
+    color: #313131;
+    background-color: var(--background-color-2);
+    border-radius: .1rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.App-Value {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.App-Texts {
+    position: relative;
+    margin-top: .6rem;
+    font-size: 18px;
+    color: #646464;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.App-Texts:hover {
+    color: #131313;
+}
+
+.App-Texts::before{
+    content: '';
+    position: absolute;
+    bottom: -25%;
+    right: 0;
+    width: 0;
+    height: 2px;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#App-All::before{
+    background-color: var(--background-color-4);
+}
+
+#App-Important::before {
+    background-color: var(--list-color-Red);
+}
+
+#App-Ordinary::before {
+    background-color: var(--list-color-Yellow);
+}
+
+#App-Insignificant::before {
+    background-color: var(--list-color-Green);
+}
+
+.App-Texts:hover::before{
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+#List-Section {
+    margin: 1.2rem 7rem;
+    transition: all 200ms;
+}
+
+#Look-Empty {
+    margin: 1rem 0;
+    padding: 2rem 0;
+    text-align: center;
+    background-color: var(--background-color-2);
+    border-radius: .3rem;
+    font-size: 16px;
+}
+
+#List-Card {
+    margin: 1rem 0;
+    position: relative;
+    background-color: var(--background-color-2);
+    padding: 2rem;
+    border-top-left-radius: .4rem;
+    border-bottom-left-radius: .4rem;
+}
+
+#List-Color {
+    position: absolute;
+    content: '';
+    width: .50rem;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-top-left-radius: .4rem;
+    border-bottom-left-radius: .4rem;
+}
+
+#List-Color {
+    background-color: var(--background-color-5);
+}
+
+#List-Flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#List-Card:hover #List-Icon {
+    cursor: pointer;
+    visibility: visible;
+    opacity:1;
+}
+
+#List-Text {
+    font-size: 18px;
+}
+
+#List-Icon {
+    opacity:0;
+    transition:visibility 150ms linear,opacity 150ms linear;
+    visibility: hidden;
+    color: #d90429;
+    font-size: 24px;    
+}
+
+#Form-Section {
+    background-color: var(--background-color-2);
+    padding: 2rem;
+    margin: 3rem 7rem;
+}
+
+#Add-Input {
+    width: 100%;
+    font-size: 20px;
+    background-color: var(--background-color-2);
+    color: #363636;
+    padding: .5rem .5rem;
+    outline: 2px solid #e0e2db;
+    border: none;
+    border-radius: .1rem;
+    transition: all 200ms;
+}
+
+#Add-Input:focus {
+    outline: 2px solid #889696;
+}
+
+#Radios-Section {
+    margin: 3rem 0;
+    display: grid;
+    text-align: center;
+    grid-template-columns: auto auto auto;
+    border-radius: .1rem;
+}
+
+input[type='radio']{
+    display: none;
+}
+
+#Radios-Section label {
+    padding: .6rem;
+    margin: 0 1rem;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--background-color-6);
+    border-radius: .1rem;
+    transition: all 200ms;
+}
+
+#Add-Radios-1:checked:checked ~ .Add-Label-1,
+#Add-Radios-2:checked:checked ~ .Add-Label-2,
+#Add-Radios-3:checked:checked ~ .Add-Label-3{
+  color: var(--text-color);
+}
+
+#Add-Radios-1:checked:checked ~ .Add-Label-1 {
+    background-color: var(--list-color-Red);
+}
+
+#Add-Radios-2:checked:checked ~ .Add-Label-2 {
+    background-color: var(--list-color-Yellow);
+}
+
+#Add-Radios-3:checked:checked ~ .Add-Label-3 {
+    background-color: var(--list-color-Green);
+}
+
+#Save-Todo {
+    display: block;
+    outline: none;
+    border: none;
+    padding: .5rem 1rem;
+    width: 100%;
+    border-radius: .1rem;
+    font-size: 18px;
+    background-color: var(--background-color-3);
+    color: var(--text-color);
+    transition: all 300ms;
+}
+
+#Save-Todo:hover {
+    background-color: var(--background-hover);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .Title-Icon {
+        font-size: 18px;
+    }
+
+    #Values-Section {
+        margin: -4rem 5rem 0 5rem;
+    }
+    
+    .App-Value {
+        font-size: 20px;
+    }
+    
+    .App-Texts {
+        font-size: 16px;
+    }
+
+    #List-Section {
+        margin: 1.2rem 5rem;
+    }
+
+    #List-Text {
+        font-size: 18px;
+    }
+
+    #List-Icon {
+        font-size: 22px;    
+    }
+
+    #Values-Section-2 {
+        margin: -4rem 5rem 0 5rem;
+    }
+
+    #Form-Section {
+        margin: 3rem 5rem;
+    }
+
+    #Add-Input {
+        font-size: 18px;
+    }
+
+    #Radios-Section {
+        grid-template-columns: auto;
+    }
+
+    #Radios-Section label {
+        font-size: 18px;
+        margin: .5rem 1rem;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    
+    .Title-Icon {
+        font-size: 16px;
+    }
+    
+    .App-Value {
+        font-size: 18px;
+    }
+    
+    .App-Texts {
+        font-size: 14px;
+    }
+
+    #List-Text {
+        font-size: 14px;
+    }
+
+    #List-Icon {
+        font-size: 20px;    
+    }
+
+    #Add-Input {
+        font-size: 16px;
+    }
+
+    #Radios-Section label {
+        font-size: 16px;
+    }
+
+    #Save-Todo {
+        font-size: 16px;
+    }
+
+    #Look-Empty {
+        font-size: 14px;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    
+    .Title-Icon {
+        font-size: 14px;
+    }
+    
+    #Values-Section {
+        margin: -4rem 4rem 0 4rem;
+    }
+    
+    .App-Value {
+        font-size: 14px;
+    }
+    
+    .App-Texts {
+        font-size: 10px;
+    }
+
+    #List-Section {
+        margin: 1.2rem 4rem;
+    }
+
+    #List-Text {
+        font-size: 12px;
+    }
+
+    #Form-Section {
+        margin: 3rem 4rem;
+    }
+    
+    #Values-Section-2 {
+        font-size: 13px;
+        margin: -4rem 4rem 0 4rem;
+    }
+
+    #Add-Input {
+        font-size: 14px;
+    }
+
+    #Radios-Section label {
+        font-size: 14px;
+    }
+
+    #Save-Todo {
+        font-size: 14px;
+    }
+
+    #Look-Empty {
+        font-size: 12px;
+    }
+}

@@ -1,4 +1,8 @@
-# todo-app
+# Todo-App
+
+## Description
+
+It is a to-do list application where you can record and track your tasks to be done in this project, which consists of 3 separate parts.
 
 ## Project setup
 ```
@@ -14,11 +18,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
